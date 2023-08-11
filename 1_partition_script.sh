@@ -17,3 +17,16 @@ parted /dev/sda mkpart root ext4 2GiB 20GiB
 
 # Home partition (Remaining space)
 parted /dev/sda mkpart home ext4 20GiB 100% 
+
+
+# Format the partitions
+mkfs.fat -F 32 /dev/sda1
+mkswap /dev/sda2
+mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/sda4
+
+swapon /dev/sda2
+
+echo $'Disk partition done\n\n'
+
+lsblk
