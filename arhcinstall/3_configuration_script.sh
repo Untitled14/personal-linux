@@ -52,7 +52,7 @@ options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw nvidia-drm.mode
 
 #Nvidia graphics card
 sudo pacman -S linux-headers
-sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+sudo pacman -S nvidia-open-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 
 mkdir /etc/pacman.d/hooks
 echo -e '[Trigger]\n'\
