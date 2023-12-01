@@ -18,7 +18,7 @@ parted /dev/sda mkpart root ext4 17GiB 128GiB
 
 # Home partition (Remaining space)
 parted /dev/sda mkpart home ext4 128GiB 100%
-parted /dev/sdb mkpart sdb ext4 1MiB 100% mklabel gpt
+parted /dev/sdb mklabel gpt mkpart sdb ext4 1MiB 100%
 
 # Format the partitions
 mkfs.fat -F 32 /dev/sda1
