@@ -11,14 +11,14 @@ parted /dev/sda mklabel gpt mkpart boot fat32 1MiB 1024MiB
 parted /dev/sda set 1 esp on
 
 # Swap partition (36 GiB)
-parted /dev/sda mkpart swap linux-swap 1024MiB 37GiB 
+parted /dev/sda mkpart swap linux-swap 1024MiB 17GiB mklabel gpt
 
 # Root partition (128 GiB)
-parted /dev/sda mkpart root ext4 37GiB 128GiB
+parted /dev/sda mkpart root ext4 17GiB 128GiB mklabel gpt
 
 # Home partition (Remaining space)
-parted /dev/sda mkpart extra ext4 128GiB 100%
-parted /dev/sdb mkpart home ext4 2MiB 100%
+parted /dev/sda mkpart home ext4 128GiB 100% mklabel gpt
+parted /dev/sdb mkpart sdb ext4 2MiB 100% mklabel gpt
 
 # Format the partitions
 mkfs.fat -F 32 /dev/sda1
