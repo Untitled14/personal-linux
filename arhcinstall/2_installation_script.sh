@@ -5,6 +5,8 @@ mount --mkdir /dev/sda1 /mnt/boot
 mount --mkdir /dev/sda4 /mnt/home
 mount --mkdir /dev/sdb1 /mnt/sdb
 
+sudo pacman -Sy archlinux-keyring
+
 sudo pacman -Sy pacman-contrib
 
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
