@@ -4,6 +4,10 @@ set -x
 
 # Stop display manager
 systemctl stop gdm.service
+
+# Nees to sleep
+sleep 1
+
 ## Uncomment the following line if you use GDM
 killall gdm-x-session
 
